@@ -3,6 +3,8 @@
 \usepackage[utf8]{inputenc}             % Para poder escribir tildes
 \usepackage{textcomp}					% M\`as caracteres acentuados
 \usepackage{multicol}					% Crea ambientes donde se puede escribir en varias columnas
+\usepackage{soul}
+\usepackage{mathtools}
 \usepackage{amsmath,amssymb,amsfonts,latexsym,cancel}	% Paquete para la creaci\'on de ambientes y s\'imbolos matem\'aticos
 \usepackage{amssymb}
 %---------------------------------------------------------------------------------------------------------------------------
@@ -19,9 +21,9 @@
 \fancyhead[c]{}
 \renewcommand{\headrulewidth}{0pt} 			% grosor de la l\'inea de la cabecera
 %---------------------------------------------------------------------------------------------------------------------------
-\usepackage{color}					% Para generar y usar colores
+\usepackage{xcolor}					% Para generar y usar colores
 \definecolor{azul}{rgb}{0,0,1}
-\definecolor{g}{cmyk}{0.4,0.4,0.4,0.4}
+\definecolor{g}{cmyk}{0.05,0.05,0.05,0.05}
 %\definecolor{``nombre''}{``formato''}{0.0,0.0,0.0,0.0}
 %---------------------------------------------------------------------------------------------------------------------------
 \usepackage{graphicx}					% Para poder introducir gr\'aficas y fotos en formatos dif. a eps
@@ -66,62 +68,78 @@
 }
 %-----------------Comandos creados para ayudar---------------
  \newcommand{\real}{\mathbb{R}}
+ \newcommand{\resalta}[1]{\colorbox{g}{$\displaystyle #1$}}
+ \newlength\dlf
+\newcommand\alignedbox[2]{
+  % #1 = before alignment
+  % #2 = after alignment
+  &
+  \begingroup
+  \settowidth\dlf{$\displaystyle #1$}
+  \addtolength\dlf{\fboxsep+\fboxrule}
+  \hspace{-\dlf}
+  \fcolorbox{g}{g}{$\displaystyle #1 #2$}
+  \endgroup
+}
 %-------------------------------------------------------------
 \begin{document}
 \maketitle
 \section*{Conjuntos}
+%Ejercicio 1----------------------
     \begin{enumerate}
         \item Dado el conjunto $A=\{1,2,3\}$, determinar c\'uales de las siguientes afirmaciones son verdaderas:
         \begin{enumerate}[label = \roman*)]
             \item $1\in A$\\
-                \textit{Verdadero}, 1 est\'a el la lista de elementos de $A$.
+                \colorbox{g}{\textit{Verdadero}}, 1 est\'a el la lista de elementos de $A$.
             \item $\{1\}\subseteq A$\\
-                \textit{Verdadero}, el conjunto $\{1\}$ es subconjunto de $A$.
+                \colorbox{g}{\textit{Verdadero}}, el conjunto $\{1\}$ es subconjunto de $A$.
             \item $\{2,1\}\subseteq A$\\
-                \textit{Verdadero}, en principio, los elementos de un conjunto no estan ordenados, luego $\{2,1\}=\{1,2\}$, y este conjunto es subconjunto de $A$.
+                \colorbox{g}{\textit{Verdadero}}, en principio, los elementos de un conjunto no estan ordenados, luego $\{2,1\}=\{1,2\}$, y este conjunto es subconjunto de $A$.
             \item $\{1,3\}\in A$\\
-                \textit{Falso}, el conjunto $\{1,3\}$ es \textit{subconjunto} de $A$, m\'as no est\'a en la lista de elementos de $A$.
+                \colorbox{g}{\textit{Falso}}, el conjunto $\{1,3\}$ es \textit{subconjunto} de $A$, m\'as no est\'a en la lista de elementos de $A$.
             \item $\{2\}\in A$\\
-                \textit{Falso}, Ocurre lo mismo que en el caso anterior.
+                \colorbox{g}{\textit{Falso}}, Ocurre lo mismo que en el caso anterior.
         \end{enumerate}
+%Ejercicio 2----------------------
         \item Dado el conjunto $A = \{1,2,\{3\},\{1,2\}\} $, determinar c\'uales de las siguientes afirmaciones son verdaderas:
         \begin{enumerate}[label = \roman*)]
             \item $3\in A$\\
-                \textit{Falso}, El elemento de $A$ es el conjunto $\{3\}$, no el elemento $3$.
+                \colorbox{g}{\textit{Falso}}, El elemento de $A$ es el conjunto $\{3\}$, no el elemento $3$.
             \item $\{3\} \subseteq A$\\
-                \textit{Falso}, el conjunto $\{3\}$ es \textit{un elemento} de $A$, no un subconjunto.
+                \colorbox{g}{\textit{Falso}}, el conjunto $\{3\}$ es \textit{un elemento} de $A$, no un subconjunto.
             \item $\{3\} \in A$\\
-                \textit{Verdadero}.
+                \colorbox{g}{\textit{Verdadero}}.
             \item $\{\{3\}\} \subseteq A$\\
-                \textit{Verdadero}, el conjunto de un \'unico elemento $\{\{3\}\}$ es subconjunto de $A$.
+                \colorbox{g}{\textit{Verdadero}}, el conjunto de un \'unico elemento $\{\{3\}\}$ es subconjunto de $A$.
             \item $\{1,2\} \in A$\\
-                \textit{Verdadero}.
+                \colorbox{g}{\textit{Verdadero}}.
             \item $\{1,2\} \subseteq A$\\
-                \textit{Falso}, el conjunto $\{1,2\}$ es \textit{un elemento} de $A$.
+                \colorbox{g}{\textit{Falso}}, el conjunto $\{1,2\}$ es \textit{un elemento} de $A$.
             \item $\{\{1,2\}\} \subseteq A$\\
-                \textit{Verdadero}, dado que $\{1,2\}$ es un elemento de $A$, el conjunto creado a partir de este \'unico elemento ser\'a subconjunto de $A$.
+                \colorbox{g}{\textit{Verdadero}}, dado que $\{1,2\}$ es un elemento de $A$, el conjunto creado a partir de este \'unico elemento ser\'a subconjunto de $A$.
             \item $\{\{1,2\},3\} \subseteq A$\\
-                \textit{Falso}, el elemento $3$ no pertenece a $A$, por lo tanto cualquier conojunto que tenga a $3$ no puede ser subconjunto de $A$.
+                \colorbox{g}{\textit{Falso}}, el elemento $3$ no pertenece a $A$, por lo tanto cualquier conojunto que tenga a $3$ no puede ser subconjunto de $A$.
             \item $\emptyset \in A$\\
-                \textit{Falso}, el conjunto vacio es \textit{un subconjunto} de $A$.
+                \colorbox{g}{\textit{Falso}}, el conjunto vacio es \textit{un subconjunto} de $A$.
             \item $\emptyset \subseteq A$\\
-                \textit{Verdadero}.
-            \item $A\in A$
-                \textit{Falso}, Todo conjunto es subconjunto de s\'i mismo\footnote{Aunque es verdad que pueden darse casos en los que por la misma definici\'on del conjunto, este puede ser parte de s\'i mismo, No en este caso.}.
-            \item $A\subseteq A$
-                \textit{Verdadero}.
+                \colorbox{g}{\textit{Verdadero}}
+            \item $A\in A$\\
+                \colorbox{g}{\textit{Falso}}, Todo conjunto es subconjunto de s\'i mismo\footnote{Aunque es verdad que pueden darse casos en los que por la misma definici\'on del conjunto, este puede ser parte de s\'i mismo, No en este caso.}.
+            \item $A\subseteq A$\\
+                \colorbox{g}{\textit{Verdadero}}.
         \end{enumerate}
         \newpage
+%Ejercicio 3----------------------
         \item Determinar si $A \subseteq B$ en cada uno de los siguientes casos:
             \begin{enumerate}[label = \roman*)]
                 \item $A=\{1,2,3\}$, $B=\{5,4,3,2,1\}$\\
-                    \textit{Verdadero}. los elementos 1, 2, 3 pertenecen a los dos conjuntos.
+                    \colorbox{g}{\textit{Verdadero}}. los elementos 1, 2, 3 pertenecen a los dos conjuntos.
                  \item $A=\{1,2,3\}$, $B=\{1,2,\{3\},-3\}$\\
-                    \textit{Falso}, ya que el elemento tres no hace parte de los elementos de $B$.
-                \item $A=\{x\in \mathbb{R}/2<|x|<3\}$, $B=\{x\in \mathbb{R}/x^{2}<3\}$\\
-                    \textit{Verdadero}, ya que los intervalos donde $x$ pertenece a $A$ son $(-3,-2)$ y $(2,3)$, mientras que el intevalo donde $x$ pertenece a $B$ es $(-3,3)$
-                \item $A=\{\emptyset\}$, $B=\emptyset$
-                    \textit{Falso}, ya que $B$ es el conjunto vacio, $B$ es subconjunto propio de cualquier otro subconjunto, m\'as no tiene ning\'un subconjunto propio.
+                    \colorbox{g}{\textit{Falso}}, ya que el elemento tres no hace parte de los elementos de $B$.
+                \item $A=\{x\in \mathbb{R} \colon 2<|x|<3\}$, $B=\{x\in \mathbb{R}\colon x^{2}<3\}$\\
+                    \colorbox{g}{\textit{Verdadero}}, ya que los intervalos donde $x$ pertenece a $A$ son $(-3,-2)$ y $(2,3)$, mientras que el intevalo donde $x$ pertenece a $B$ es $(-3,3)$
+                \item $A=\{\emptyset\}$, $B=\emptyset$\\
+                    \colorbox{g}{\textit{Falso}}, ya que $B$ es el conjunto vacio, $B$ es subconjunto propio de cualquier otro subconjunto, m\'as no tiene ning\'un subconjunto propio.
             \end{enumerate}
         \item 
         \begin{enumerate}[label = \roman*)]
@@ -129,11 +147,177 @@
             $\{-3,1,5\}$: 
             Aunque para describir este conjunto por compreni\'on hay varias maneras, una de las m\'as sencillas es expresar estos valores como el conjunto soluci\'on de las raices de un polinomio, asi, se puede describir el conjunto como:
             \begin{equation}
-                \notag \{x\in \mathbb{R}/(x+3)(x-1)(x-5)=0\}
+                \notag \resalta{\{x\in \mathbb{R}\colon (x+3)(x-1)(x-5)=0\}}
             \end{equation}
-            \\\\
-            $(-\infty,2]\cup[7,+\infty)$
+            $(-\infty,2]\cup[7,+\infty)$: Una buena manera de describir este conjunto es llevandolo a una expresi\'on relacionada con un valor absoluto, esto se intuye por la misma descripci\'on ya dada: que $x$ pertenezca a $(-\infty,2]\cup[7,+\infty)$, solo puede ocurrir si:
+           \begin{eqnarray*}
+             \notag
+                x<2&\wedge& x>7\\
+                x-(9/2)<2-(9/2)&\wedge& x-(9/2)>7-(9/2)\\
+                x -9/2<-5/2&\wedge& x-9/2>5/2
+            \end{eqnarray*}
+            Basicamente, al restar a los t\'erminos de las desigualdades $9/2$ logramos ``centrar'' los intervalos respecto al origen para ver m\'as claramente c\'omo reescribir el conjunto. Es claro que el conjunto hace referencia a
+            \begin{equation}
+                \notag\resalta{\{x \in \real \colon |x-9/2|>5/2\}}
+            \end{equation}
+            \item Describir a los siguentes subconjuntos de $\real$ por comprensi\'on mediante \textit{una sola} ecuaci\'on:\\
+            \\
+            \begin{minipage}[c]{0.3\linewidth}
+                \centering
+                    \includegraphics[scale=0.15]{4ii-1}
+            \end{minipage}
+            \begin{minipage}[c]{0.7\linewidth}
+                Esta es la recta $x=y$, por lo tanto la ecuaci\'on que describe este conjunto es
+                \begin{equation}
+                    \notag \resalta{\{(x,y)\in \real^{2} \colon x=y\}}
+                \end{equation}
+            \end{minipage}
+            \begin{minipage}[c]{0.3\linewidth}
+                \centering
+                    \includegraphics[scale=0.15]{4ii-2}
+            \end{minipage}
+            \begin{minipage}[c]{0.7\linewidth}
+                Esta es la recta $x=-y$, por lo tanto la ecuaci\'on que describe este conjunto es
+                \begin{equation}
+                    \notag \resalta{\{(x,y)\in \real^{2} \colon x=-y\}}
+                \end{equation}
+            \end{minipage}
+            \begin{minipage}[c]{0.3\linewidth}
+                \centering
+                    \includegraphics[scale=0.15]{4ii-3}
+            \end{minipage}
+            \begin{minipage}[c]{0.7\linewidth}
+                Este es una conbinaci\'n de los dos grupos anteriores donde tanto $x=y$ como $x=-y$, esto es, que $x=|y|$, y reciprocamente $|x|=y$, luego el conjunto se representa mediante la expresi\'on
+                \begin{equation}
+                    \notag \resalta{\{(x,y)\in \real^{2} \colon |x|=|y|\}}
+                \end{equation}
+            \end{minipage}
+            \begin{minipage}[c]{0.3\linewidth}
+                \centering
+                    \includegraphics[scale=0.15]{4ii-4}
+            \end{minipage}
+            \begin{minipage}[c]{0.7\linewidth}
+                Aqu\'i se tiene que $x=1$ y $x=2$; una vez m\'as, se puede tomar una expresi\'on para estos dos valores como raices de un polinomio, esto es
+                \begin{equation}
+                    \notag \resalta{\{(x,y)\in \real^{2} \colon (x-1)(x-2)=0\}}
+                \end{equation}
+            \end{minipage}
+            \begin{minipage}[c]{0.3\linewidth}
+                \centering
+                    \includegraphics[scale=0.15]{4ii-5}
+            \end{minipage}
+            \begin{minipage}[c]{0.7\linewidth}
+               Nuevamente podemos ver que el valor $x=1$ es la soluci\'on a una ecuaci\'on autoevidente
+                \begin{equation}
+                    \notag \resalta{\{(x,y)\in \real^{2} \colon x=1\}}
+                \end{equation}
+            \end{minipage}
+            \begin{minipage}[c]{0.3\linewidth}
+                \centering
+                    \includegraphics[scale=0.15]{4ii-6}
+            \end{minipage}
+            \begin{minipage}[c]{0.7\linewidth}
+                En este caso la expresi\'on que es m\'as \'util es una desigualdad 
+                \begin{equation}
+                    \notag \resalta{\{(x,y)\in \real^{2} \colon y\leq 0\}}
+                \end{equation}
+            \end{minipage}
         \end{enumerate}
+%Ejercicio 5---------------------------------------------------------------
+        \item Dados los subconjunto $A=\{1,-2,7,3\}$, $B=\{1,\{3\},10\}$ y $C=\{-2,\{1,2,3\},3\}$ del conjunto referencial $V=\{1,\{3\},-2,7,10,\{1,2,3\},3\}$ hallar:
+        \begin{enumerate}[label = \roman*)]
+            \item $A\cap(B\bigtriangleup C)$\\\\
+            La diferencia sim\'etrica entre dos conjuntos dice que se toman los elementos que pertecen a uno u otro de los dos conjuntos, pero no aquellos que pertenezcan simultaneamente a ambos, esto es:
+            \begin{align*}
+                A\cap(B\bigtriangleup C)) &= A\cap(B\cup C - B\cap C)
+                \intertext{Ahora, el conjunto $B\cap C = \emptyset$, por lo que la operaci\'on queda:}
+                A\cap(B\bigtriangleup C) &= A\cap(B\cup C)
+            \end{align*}
+            esto es:
+            \begin{equation}
+                \notag \resalta{A\cap(B\bigtriangleup C) = \{1,-2,3\}}
+            \end{equation}        
+            \item $(A\cap B)\bigtriangleup(A\cap C)$\\\\
+            Primero se hayan los conjuntos correspondientes a las intersecciones, y luego tomamos su diferencia sim\'etrica, as\'i tenemos que
+            \begin{align*}
+                (A\cap B)&=\{1\}\\
+                (A\cap C)&=\{-2,3\}\\
+                \alignedbox{(A\cap B)\bigtriangleup(A\cap C)}{= \{1,-2,3\}}
+            \end{align*}
+            \item $A^{c}\cap B^{c}\cap C^{c}$\\
+            En este caso, lo mejoor es primer aplicar las leyes de De Morgan, de esta manera se logra simplificar bastante el c\'alculo del conjunto.
+            \newpage
+            Aplicando las leyes de De Morgan tenemos:
+            \begin{align*}
+                A^{c}\cap B^{c}\cap C^{c} &= (A\cup B)^{c}\cap C^{c}\\
+                                        &= ((A\cup B)\cup C)^{c}\\
+                                        &= (A\cup B\cup C)^{c}
+            \end{align*}
+            Ahora, al hacer al uni\'on de los conjuntos nos encontramos con
+            \begin{align*}
+                (A\cup B\cup C) = \{1,-2,7,3,\{3\},10,\{1,2,3\}\}
+            \end{align*}
+            que es el conjunto referencial $V$, de esta manera tenemos ahora
+            \begin{align*}
+                A^{c}\cap B^{c}\cap C^{c} &=(A\cup B\cup C)^{c}\\
+                                        &=V^{c}\\
+                \alignedbox{A^{c}\cap B^{c}\cap C^{c}}{=\emptyset}
+            \end{align*}
+        \end{enumerate}
+%Ejercicio 6-----------------------------------------------------------------------
+        \item Dados los subconjuntos $A$, $B$, $C$ de un conjunto referencial $V$, describir $(A\cup B\cup C)^{c}$ en t\'erminos de intersecciones y complementos, y $(A\cap B\cap C)^{c}$ en t\'erminos de uniones y complementos.\\\\
+        Simplemente aplicamos las leyes de De Morgan las veces que hagan falta para llegar un resultado en los t\'erminos requeridos, as\'i:\\
+        \begin{minipage}[c]{0.5\linewidth}
+            \begin{align*}
+                (A\cup B\cup C)^{c} &= ((A\cup B)\cup C)^{c}\\
+                                    &= (A\cup B)^{c}\cap C^{c}\\
+                \alignedbox{(A\cup B\cup C)^{c}}{=A^{c}\cap B^{c}\cap C^{c}}
+            \end{align*}
+        \end{minipage}
+        \begin{minipage}[c]{0.5\linewidth}
+            \begin{align*}
+                (A\cap B\cap C)^{c} &= ((A\cap B)\cap C)^{c}\\
+                                    &= (A\cap B)^{c}\cup C^{c}\\
+                \alignedbox{(A\cap B\cap C)^{c}}{=A^{c}\cup B^{c}\cup C^{c}}
+            \end{align*}
+        \end{minipage}
+%Ejercicio 7-------------------------------------------------------------------
+        \item Sean $A$, $B$ y $C$ conjuntos. Representar en un diagrama de Venn\\
+        \begin{enumerate}[label = \roman*)]
+            \begin{minipage}[c]{0.3\linewidth}
+                \item $(A\cup B^{c})\cap C$\\\\
+                \centering
+                    \includegraphics[scale=0.6]{7-i}
+            \end{minipage}
+            \begin{minipage}[c]{0.3\linewidth}
+                \item $A\bigtriangleup(B\cup C)$\\\\
+                \centering
+                    \includegraphics[scale=0.6]{7-ii}
+            \end{minipage}
+            \begin{minipage}[c]{0.3\linewidth}
+                \item $A\cup (B\bigtriangleup C)$\\\\
+                \centering
+                    \includegraphics[scale=0.6]{7-iii}
+            \end{minipage}
+        \end{enumerate}
+%Ejercicio 8 -----------------------------------------------------------------------------------
+        \item Encontrar f\'ormulas que describan las partes rayadas de los siguentes diagramas de Venn, utilizando \'unicamente intersecciones, uniones y complementos.\\
+        %\begin{enumerate}[label = \roman*)]
+            %\begin{minipage}[b]{0.3\linewidth}
+            %\item \includegraphics[scale=0.05]{8-i}
+            %\end{minipage}
+            %\begin{minipage}[c]{0.3\linewidth}
+            %    \item $A\bigtriangleup(B\cup C)$\\\\
+            %    \centering
+            %        \includegraphics[scale=0.6]{7-ii}
+            %\end{minipage}
+            %\begin{minipage}[c]{0.3\linewidth}
+            %    \item $A\cup (B\bigtriangleup C)$\\\\
+            %    \centering
+            %        \includegraphics[scale=0.6]{7-iii}
+            %\end{minipage}
+        %\end{enumerate}
+        
     \end{enumerate}
 
 
