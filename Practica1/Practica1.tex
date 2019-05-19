@@ -7,29 +7,52 @@
 \usepackage{mathtools}
 \usepackage{amsmath,amssymb,amsfonts,latexsym,cancel}	% Paquete para la creaci\'on de ambientes y s\'imbolos matem\'aticos
 \usepackage{amssymb}
+\usepackage{multirow}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{anysize}
+\usepackage{fancyhdr}
+\usepackage{xcolor}	
+\usepackage{graphicx}	
+\usepackage{caption}
+\usepackage{adjustbox}
+\usepackage[colorlinks=true,backref=true,linkcolor=azul,citecolor=g,urlcolor=azul]{hyperref}
+\IfFileExists{enumitem.sty}{\usepackage{enumitem}}{}
+\usepackage{floatrow}
 %---------------------------------------------------------------------------------------------------------------------------
-\usepackage{anysize}					% Para ajustar m\'argenes del documento
+					% Para ajustar m\'argenes del documento
 \marginsize{1cm}{1cm}{0.5cm}{0.3cm}
 %\marginsize{L}{R}{U}{D}
-\IfFileExists{enumitem.sty}{\usepackage{enumitem}}{}
+\captionsetup{font={scriptsize}}
+%\setlength{\captionmargin}{20pt}
+%\newcommand{\captionfonts}{\scriptsize}
+%\makeatletter  % Allow the use of @ in command names
+%\long\def\@makecaption#1#2{%
+%  \vskip\abovecaptionskip
+%  \sbox\@tempboxa{{\captionfonts #1: #2}}%
+%  \ifdim \wd\@tempboxa >\hsize
+%    {\captionfonts #1: #2\par}
+%  \else
+%    \hbox to\hsize{\hfil\box\@tempboxa\hfil}%
+%  \fi
+ % \vskip\belowcaptionskip}
+%\makeatother
 %---------------------------------------------------------------------------------------------------------------------------
-\usepackage{fancyhdr}					% Para editar encabezados y pies de p\'agina
+					% Para editar encabezados y pies de p\'agina
 \pagestyle{fancy}
 \fancyfoot[C]{}
 \fancyhead[r]{}
 \fancyhead[l]{}
 \fancyhead[c]{}
-\renewcommand{\headrulewidth}{0pt} 			% grosor de la l\'inea de la cabecera
+
 %---------------------------------------------------------------------------------------------------------------------------
-\usepackage{xcolor}					% Para generar y usar colores
+				% Para generar y usar colores
 \definecolor{azul}{rgb}{0,0,1}
 \definecolor{g}{cmyk}{0.05,0.05,0.05,0.05}
 %\definecolor{``nombre''}{``formato''}{0.0,0.0,0.0,0.0}
 %---------------------------------------------------------------------------------------------------------------------------
-\usepackage{graphicx}					% Para poder introducir gr\'aficas y fotos en formatos dif. a eps
+				% Para poder introducir gr\'aficas y fotos en formatos dif. a eps
 \DeclareGraphicsExtensions{.pdf,.png,.jpg}
 %---------------------------------------------------------------------------------------------------------------------------
-\usepackage[colorlinks=true,backref=true,linkcolor=azul,citecolor=g,urlcolor=azul]{hyperref}
 % Para insertar v\`inculos e hiperv\`iculos
 %linkcolor=color (red) links internos
 %citecolor=color (green) color de citaciones
@@ -51,9 +74,6 @@
 \begin{normalsize}\@author\end{normalsize}
 \end{center}
 }
-
-\usepackage[utf8]{inputenc}
-
 \title{Álgebra - Pr\'actica 1 - Conjuntos, Relaciones y Funciones} 
 \author{}
 \date{1-2019}
@@ -67,9 +87,9 @@
   /Keywords ()
 }
 %-----------------Comandos creados para ayudar---------------
- \newcommand{\real}{\mathbb{R}}
- \newcommand{\resalta}[1]{\colorbox{g}{$\displaystyle #1$}}
- \newlength\dlf
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\resalta}[1]{\colorbox{g}{$\displaystyle #1$}}
+\newlength\dlf
 \newcommand\alignedbox[2]{
   % #1 = before alignment
   % #2 = after alignment
@@ -81,8 +101,20 @@
   \fcolorbox{g}{g}{$\displaystyle #1 #2$}
   \endgroup
 }
+\newcommand{\corchetes}[1][*]{
+   $\{{#1}\}$
+}
+\newcommand{\partesde}[1][*]{
+    \mathcal{P}({#1})
+}
 %-------------------------------------------------------------
 \begin{document}
+\renewcommand{\headrulewidth}{0pt} 			% grosor de la l\'inea de la cabecera
+\renewcommand{\tablename}{Tabla}
+\renewcommand{\figurename}{Fig.}
+\renewcommand{\refname}{Bibliograf\'ia y referencias}
+\renewcommand{\contentsname}{Tabla de contenido}
+%\renewcommand{\citeform[1]{[#1]}
 \maketitle
 \section*{Conjuntos}
 %Ejercicio 1----------------------
@@ -131,7 +163,7 @@
         \newpage
 %Ejercicio 3----------------------
         \item Determinar si $A \subseteq B$ en cada uno de los siguientes casos:
-            \begin{enumerate}[label = \roman*)]
+        \begin{enumerate}[label = \roman*)]
                 \item $A=\{1,2,3\}$, $B=\{5,4,3,2,1\}$\\
                     \colorbox{g}{\textit{Verdadero}}. los elementos 1, 2, 3 pertenecen a los dos conjuntos.
                  \item $A=\{1,2,3\}$, $B=\{1,2,\{3\},-3\}$\\
@@ -140,11 +172,11 @@
                     \colorbox{g}{\textit{Verdadero}}, ya que los intervalos donde $x$ pertenece a $A$ son $(-3,-2)$ y $(2,3)$, mientras que el intevalo donde $x$ pertenece a $B$ es $(-3,3)$
                 \item $A=\{\emptyset\}$, $B=\emptyset$\\
                     \colorbox{g}{\textit{Falso}}, ya que $B$ es el conjunto vacio, $B$ es subconjunto propio de cualquier otro subconjunto, m\'as no tiene ning\'un subconjunto propio.
-            \end{enumerate}
-        \item 
+        \end{enumerate}
+%Ejercicio 4---------------------
+        \item Describir a los siguentes subconjuntos de $\real$ por comprensi\'on mediante \textit{una sola} ecuaci\'on:
         \begin{enumerate}[label = \roman*)]
-            \item Describir a los siguentes subconjuntos de $\real$ por comprensi\'on mediante \textit{una sola} ecuaci\'on:\\\\
-            $\{-3,1,5\}$: 
+            \item $\{-3,1,5\}$: 
             Aunque para describir este conjunto por compreni\'on hay varias maneras, una de las m\'as sencillas es expresar estos valores como el conjunto soluci\'on de las raices de un polinomio, asi, se puede describir el conjunto como:
             \begin{equation}
                 \notag \resalta{\{x\in \mathbb{R}\colon (x+3)(x-1)(x-5)=0\}}
@@ -161,7 +193,6 @@
                 \notag\resalta{\{x \in \real \colon |x-9/2|>5/2\}}
             \end{equation}
             \item Describir a los siguentes subconjuntos de $\real$ por comprensi\'on mediante \textit{una sola} ecuaci\'on:\\
-            \\
             \begin{minipage}[c]{0.3\linewidth}
                 \centering
                     \includegraphics[scale=0.15]{4ii-1}
@@ -207,7 +238,7 @@
                     \includegraphics[scale=0.15]{4ii-5}
             \end{minipage}
             \begin{minipage}[c]{0.7\linewidth}
-               Nuevamente podemos ver que el valor $x=1$ es la soluci\'on a una ecuaci\'on autoevidente
+                Nuevamente podemos ver que el valor $x=1$ es la soluci\'on a una ecuaci\'on autoevidente
                 \begin{equation}
                     \notag \resalta{\{(x,y)\in \real^{2} \colon x=1\}}
                 \end{equation}
@@ -245,7 +276,7 @@
                 \alignedbox{(A\cap B)\bigtriangleup(A\cap C)}{= \{1,-2,3\}}
             \end{align*}
             \item $A^{c}\cap B^{c}\cap C^{c}$\\
-            En este caso, lo mejoor es primer aplicar las leyes de De Morgan, de esta manera se logra simplificar bastante el c\'alculo del conjunto.
+            En este caso, lo mejor es primer aplicar las leyes de De Morgan, de esta manera se logra simplificar bastante el c\'alculo del conjunto.
             \newpage
             Aplicando las leyes de De Morgan tenemos:
             \begin{align*}
@@ -302,23 +333,107 @@
         \end{enumerate}
 %Ejercicio 8 -----------------------------------------------------------------------------------
         \item Encontrar f\'ormulas que describan las partes rayadas de los siguentes diagramas de Venn, utilizando \'unicamente intersecciones, uniones y complementos.\\
-        %\begin{enumerate}[label = \roman*)]
-            %\begin{minipage}[b]{0.3\linewidth}
-            %\item \includegraphics[scale=0.05]{8-i}
-            %\end{minipage}
-            %\begin{minipage}[c]{0.3\linewidth}
-            %    \item $A\bigtriangleup(B\cup C)$\\\\
-            %    \centering
-            %        \includegraphics[scale=0.6]{7-ii}
-            %\end{minipage}
-            %\begin{minipage}[c]{0.3\linewidth}
-            %    \item $A\cup (B\bigtriangleup C)$\\\\
-            %    \centering
-            %        \includegraphics[scale=0.6]{7-iii}
-            %\end{minipage}
-        %\end{enumerate}
-        
+        \begin{enumerate}[label = \roman*)]
+            \begin{minipage}[t]{0.5\linewidth}
+                \item
+                \begin{center}
+                    \includegraphics[scale=0.05]{8-i}\\
+                \end{center} 
+                {\footnotesize 
+                    \begin{align*}
+                        R &= (A-B)\cup ((B\cap C)-A)\\
+                        \alignedbox{R}{=(A-B)\cup (B\cap C)\cap A^{c})}
+                    \end{align*}
+                }
+            \end{minipage}
+            \begin{minipage}[t]{0.5\linewidth}
+                \item
+                \begin{center}
+                    \includegraphics[scale=0.05]{8-ii}\\
+                \end{center} 
+                {\footnotesize
+                    \begin{align*}
+                        R &= ((A-B)\cup(C-B))-(A\cap C)\\
+                        &= ((A\cap B^{c})\cup(C\cap B^{c}))\cap(A\cap C)^{c})\\
+                        \alignedbox{R}{=((A\cup C)\cap B^{c})\cap (A\cap B)^{c}}
+                    \end{align*}
+                }
+            \end{minipage}
+            \newpage
+            \begin{minipage}[t]{0.3\linewidth}
+                \item
+                \begin{center}
+                    \includegraphics[scale=0.05]{8-iii}\\
+                \end{center} 
+            \end{minipage}
+            \begin{minipage}[t]{0.7\linewidth}
+                {\footnotesize
+                    \begin{align*}
+                        R &= ((A\cap B)\cup(A\cap C)\cup(B\cap C))-((A\cap B)\cap(A\cap C)\cap(B\cap C))\\
+                        &= ((A\cap B)\cup(A\cap C)\cup(B\cap C))\cap ((A\cap B)\cap(A\cap C)\cap(B\cap C))^{c}\\
+                        &= ((A\cap B)\cup(A\cap C)\cup(B\cap C))\cap ((A\cap B)^{c}\cup(A\cap C)^{c}\cup(B\cap C)^{c})\\
+                        &= ((A\cap B)\cup(A\cap C)\cup(B\cap C))\cap ((A^{c}\cup B^{c})\cup(A^{c}\cup C^{c})\cup(B^{c}\cup C^{c}))\\
+                        \alignedbox{R}{= ((A\cap B)\cup(A\cap C)\cup(B\cap C))\cap(A^{c}\cup B^{c}\cup C^{c})}
+                    \end{align*}
+                }
+            \end{minipage}
+        \end{enumerate}
+%Ejercicio 10 ------------------------------------------------------------------
+        \item Hallar el conjunto $\mathcal{P}(A)$ (Partes de $A$)\footnote{Partes de $A$ se define como en conjunto de todos los subconjunto de $A$.} en los casos
+        \begin{enumerate}[label = \roman*)]
+            % i)----------------------------------
+            \begin{minipage}[c]{0.2\linewidth}
+                \item $A=\{1\}$
+            \end{minipage}
+            \begin{minipage}[c]{0.8\linewidth}
+                \resalta{\mathcal{P}(A)=\{\emptyset ,\{1\}\}}
+            \end{minipage}
+            % ii)-------------------------------------
+            \begin{minipage}[c]{0.2\linewidth}
+                \item $A=\{a,b\}$
+            \end{minipage}
+            \begin{minipage}[c]{0.8\linewidth}
+                \resalta{\mathcal{P}(A)=\{\emptyset ,\{a\},\{b\},\{a,b\}\}}
+            \end{minipage}
+            %iii)------------------------------
+            \begin{minipage}[c]{0.2\linewidth}
+                \item $A=\{1,\{1,2\},3\}$
+            \end{minipage}
+            \begin{minipage}[c]{0.8\linewidth}
+                \resalta{\mathcal{P}(A)=\{\corchetes[1],\corchetes[\{1,2\}], \corchetes[3],
+                \corchetes[1,\{1,2\}],\corchetes[\{1,2\},3],\corchetes[1,3],\corchetes[1,\{1,2\},3]\}}
+            \end{minipage}
+        \end{enumerate}
+%Ejercicio 10 -------------------------------------       
+        \item Sean $A$ y $B$ conjuntos. Probar que $\mathcal{P}(A)\subseteq \mathcal{P}(B)\Leftrightarrow A \subseteq B$
+        \begin{itemize}
+            \item[$\Rightarrow$] $\mathcal{P}(A)\subseteq \mathcal{P}(B)\Rightarrow A \subseteq B$\\\\
+            Si $\partesde[A]$ es subconjunto de $\partesde[B]$, dado que $A\in\partesde[A]$, $A$ pertenecerá obviamente a $\partesde[B]$, luego, por la definición del conjunto de partes, se debe tener que $A\subseteq B$.\\
+            \item[$\Leftarrow$] $A \subseteq B \Rightarrow \mathcal{P}(A)\subseteq \mathcal{P}(B) $\\\\
+            Supongamos que  $A\subseteq B$ pero $\partesde[A] \not\subseteq \partesde[B]$, entonces debería existir un subconjunto de $A$ que no es ninguno de los subconjuntos de $B$, lo que implicaría que al menos un elemento $x$, que cumple $x\in A$ no pertenece a $B$, pero entonces, si $x\in A$ y $x\not\in B$, no puede ser que $A\not\subseteq B$, que contradice nuestra suposición inicial. $\blacksquare$
+        \end{itemize}
+%Ejercicio 11 -------------------------------------
+        \item Sean $p$ y $q$ proposiciones verdaderas o Falsas. Comparar las tablas de verdad de
+        \begin{center}
+            $p\Rightarrow q$, \hspace*{12pt} $\sim q \Rightarrow \sim p $, \hspace*{12pt} $\sim p \vee q$, \hspace*{12pt} $\sim(p\wedge q)$\\\vspace{12pt}
+            
+            \begin{table}[!h]
+                \captionsetup{width=.6\textwidth}
+                \centering
+                    \begin{tabular}{cc|c|c|c|c|c|c|c|c|c}\hline
+                        \cellcolor{g} $p$ & \cellcolor{g} $q$   & \cellcolor{g}$p\Rightarrow q$ & \multicolumn{3}{c|}{ \cellcolor{g} $\sim q \Rightarrow \sim p $}  & \multicolumn{2}{c|}{ \cellcolor{g}$\sim p \vee q $}   & \multicolumn{3}{c}{ \cellcolor{g}$\sim(p\wedge \sim q)$} \\
+                        \cline{3-11}
+                        \multicolumn{2}{c|}{\cellcolor{g}}      & $\Rightarrow$                 & $\sim q$  & $\Rightarrow$     & $\sim p$                          & $\sim p$  & $\vee$                                    & $\sim $   & $\wedge$ & $\sim q$\\\hline
+                        V   & V                                 & \cellcolor{g} V               & F         & \cellcolor{g} V   & F                                 & F         & \cellcolor{g} V                           & \cellcolor{g} V         & F        & F      \\%\hline
+                        V   & F                                 & \cellcolor{g} F               & V         & \cellcolor{g} F   & F                                 & F         & \cellcolor{g} F                           & \cellcolor{g} F         & V        & V      \\%\hline
+                        F   & V                                 & \cellcolor{g} V               & F         & \cellcolor{g} V   & V                                 & V         & \cellcolor{g} V                           & \cellcolor{g} V         & F        & F      \\%\hline
+                        F   & F                                 & \cellcolor{g} V               & V         & \cellcolor{g} V   & V                                 & V         & \cellcolor{g} V                           & \cellcolor{g} V         & F        & V      \\\hline     
+                    \end{tabular}
+                    \caption{Las columnas sombreadas correspondes a los valores de verdad de las expresiones. Como se puede notar, el que tengan los mismos valores implica que son equivalentes.}
+                \end{table}
+            
+        \end{center}
+%Ejercicio 12--------------------------------------
+        \item Decidir si son verdaderas o falsas.
     \end{enumerate}
-
-
 \end{document}
