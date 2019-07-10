@@ -1,4 +1,4 @@
-\documentclass[a4paper,10pt]{article}
+\documentclass[a4paper,11pt]{article}
 \usepackage[T1]{fontenc}				% Para que se puedan formar tildes como una sola letra
 \usepackage[utf8]{inputenc}             % Para poder escribir tildes
 \usepackage{textcomp}					% M\`as caracteres acentuados
@@ -74,7 +74,7 @@
 \begin{normalsize}\@author\end{normalsize}
 \end{center}
 }
-\title{\'Algebra - Pr\'actica 1 - Conjuntos, Relaciones y Funciones} 
+\title{Álgebra - Pr\'actica 1 - Conjuntos, Relaciones y Funciones} 
 \author{}
 \date{1-2019}
 
@@ -88,7 +88,6 @@
 }
 %-----------------Comandos creados para ayudar---------------
 \newcommand{\real}{\mathbb{R}}
-\newcommand{\naturales}{\mathbb{N}}
 \newcommand{\resalta}[1]{\colorbox{g}{$\displaystyle #1$}}
 \newlength\dlf
 \newcommand\alignedbox[2]{
@@ -123,13 +122,13 @@
         \item Dado el conjunto $A=\{1,2,3\}$, determinar c\'uales de las siguientes afirmaciones son verdaderas:
         \begin{enumerate}[label = \roman*)]
             \item $1\in A$\\
-                \colorbox{g}{\textit{Verdadero}}, 1 est\'a el la lista de elementos de $A$.\\
+                \colorbox{g}{\textit{Verdadero}}, 1 est\'a el la lista de elementos de $A$.
             \item $\{1\}\subseteq A$\\
-                \colorbox{g}{\textit{Verdadero}}, el conjunto $\{1\}$ es subconjunto de $A$.\\
+                \colorbox{g}{\textit{Verdadero}}, el conjunto $\{1\}$ es subconjunto de $A$.
             \item $\{2,1\}\subseteq A$\\
-                \colorbox{g}{\textit{Verdadero}}, en principio, los elementos de un conjunto no estan ordenados, luego $\{2,1\}=\{1,2\}$, y este conjunto es subconjunto de $A$.\\
+                \colorbox{g}{\textit{Verdadero}}, en principio, los elementos de un conjunto no estan ordenados, luego $\{2,1\}=\{1,2\}$, y este conjunto es subconjunto de $A$.
             \item $\{1,3\}\in A$\\
-                \colorbox{g}{\textit{Falso}}, el conjunto $\{1,3\}$ es \textit{subconjunto} de $A$, m\'as no est\'a en la lista de elementos de $A$.\\
+                \colorbox{g}{\textit{Falso}}, el conjunto $\{1,3\}$ es \textit{subconjunto} de $A$, m\'as no est\'a en la lista de elementos de $A$.
             \item $\{2\}\in A$\\
                 \colorbox{g}{\textit{Falso}}, Ocurre lo mismo que en el caso anterior.
         \end{enumerate}
@@ -166,11 +165,11 @@
         \item Determinar si $A \subseteq B$ en cada uno de los siguientes casos:
         \begin{enumerate}[label = \roman*)]
                 \item $A=\{1,2,3\}$, $B=\{5,4,3,2,1\}$\\
-                    \colorbox{g}{\textit{Verdadero}}. los elementos 1, 2, 3 pertenecen a los dos conjuntos.\\
+                    \colorbox{g}{\textit{Verdadero}}. los elementos 1, 2, 3 pertenecen a los dos conjuntos.
                  \item $A=\{1,2,3\}$, $B=\{1,2,\{3\},-3\}$\\
-                    \colorbox{g}{\textit{Falso}}, ya que el elemento 3 no hace parte de los elementos de $B$.\\
-                \item $A=\{x\in \mathbb{R} \colon 2<|x|<3\}$, $B=\{x\in \mathbb{R}\colon x^{2}<3\}$.\\
-                    \colorbox{g}{\textit{Verdadero}}, ya que los intervalos donde $x$ pertenece a $A$ son $(-3,-2)$ y $(2,3)$, mientras que el intevalo donde $x$ pertenece a $B$ es $(-3,3)$.\\
+                    \colorbox{g}{\textit{Falso}}, ya que el elemento tres no hace parte de los elementos de $B$.
+                \item $A=\{x\in \mathbb{R} \colon 2<|x|<3\}$, $B=\{x\in \mathbb{R}\colon x^{2}<3\}$\\
+                    \colorbox{g}{\textit{Verdadero}}, ya que los intervalos donde $x$ pertenece a $A$ son $(-3,-2)$ y $(2,3)$, mientras que el intevalo donde $x$ pertenece a $B$ es $(-3,3)$
                 \item $A=\{\emptyset\}$, $B=\emptyset$\\
                     \colorbox{g}{\textit{Falso}}, ya que $B$ es el conjunto vacio, $B$ es subconjunto propio de cualquier otro subconjunto, m\'as no tiene ning\'un subconjunto propio.
         \end{enumerate}
@@ -276,8 +275,9 @@
                 (A\cap C)&=\{-2,3\}\\
                 \alignedbox{(A\cap B)\bigtriangleup(A\cap C)}{= \{1,-2,3\}}
             \end{align*}
-            \item $A^{c}\cap B^{c}\cap C^{c}$\\\\
+            \item $A^{c}\cap B^{c}\cap C^{c}$\\
             En este caso, lo mejor es primer aplicar las leyes de De Morgan, de esta manera se logra simplificar bastante el c\'alculo del conjunto.
+            \newpage
             Aplicando las leyes de De Morgan tenemos:
             \begin{align*}
                 A^{c}\cap B^{c}\cap C^{c} &= (A\cup B)^{c}\cap C^{c}\\
@@ -334,7 +334,7 @@
 %Ejercicio 8 -----------------------------------------------------------------------------------
         \item Encontrar f\'ormulas que describan las partes rayadas de los siguentes diagramas de Venn, utilizando \'unicamente intersecciones, uniones y complementos.\\
         \begin{enumerate}[label = \roman*)]
-            \begin{minipage}[t]{0.4\linewidth}
+            \begin{minipage}[t]{0.5\linewidth}
                 \item
                 \begin{center}
                     \includegraphics[scale=0.05]{8-i}\\
@@ -346,7 +346,7 @@
                     \end{align*}
                 }
             \end{minipage}
-            \begin{minipage}[t]{0.4\linewidth}
+            \begin{minipage}[t]{0.5\linewidth}
                 \item
                 \begin{center}
                     \includegraphics[scale=0.05]{8-ii}\\
@@ -359,7 +359,7 @@
                     \end{align*}
                 }
             \end{minipage}
-            \\
+            \newpage
             \begin{minipage}[t]{0.3\linewidth}
                 \item
                 \begin{center}
@@ -374,12 +374,11 @@
                         &= ((A\cap B)\cup(A\cap C)\cup(B\cap C))\cap ((A\cap B)^{c}\cup(A\cap C)^{c}\cup(B\cap C)^{c})\\
                         &= ((A\cap B)\cup(A\cap C)\cup(B\cap C))\cap ((A^{c}\cup B^{c})\cup(A^{c}\cup C^{c})\cup(B^{c}\cup C^{c}))\\
                         \alignedbox{R}{= ((A\cap B)\cup(A\cap C)\cup(B\cap C))\cap(A^{c}\cup B^{c}\cup C^{c})}
-                    \end{align*}\\
+                    \end{align*}
                 }
             \end{minipage}
         \end{enumerate}
-        \newpage
-%Ejercicio 9 ------------------------------------------------------------------
+%Ejercicio 10 ------------------------------------------------------------------
         \item Hallar el conjunto $\mathcal{P}(A)$ (Partes de $A$)\footnote{Partes de $A$ se define como en conjunto de todos los subconjunto de $A$.} en los casos
         \begin{enumerate}[label = \roman*)]
             % i)----------------------------------
@@ -409,14 +408,15 @@
         \item Sean $A$ y $B$ conjuntos. Probar que $\mathcal{P}(A)\subseteq \mathcal{P}(B)\Leftrightarrow A \subseteq B$
         \begin{itemize}
             \item[$\Rightarrow$] $\mathcal{P}(A)\subseteq \mathcal{P}(B)\Rightarrow A \subseteq B$\\\\
-            Si $\partesde[A]$ es subconjunto de $\partesde[B]$, dado que $A\in\partesde[A]$, $A$ pertenecer\'a obviamente a $\partesde[B]$, luego, por la definici\'on del conjunto de partes, se debe tener que $A\subseteq B$.\\
+            Si $\partesde[A]$ es subconjunto de $\partesde[B]$, dado que $A\in\partesde[A]$, $A$ pertenecerá obviamente a $\partesde[B]$, luego, por la definición del conjunto de partes, se debe tener que $A\subseteq B$.\\
             \item[$\Leftarrow$] $A \subseteq B \Rightarrow \mathcal{P}(A)\subseteq \mathcal{P}(B) $\\\\
-            Supongamos que  $A\subseteq B$ pero $\partesde[A] \not\subseteq \partesde[B]$, entonces deber\'ia existir un subconjunto de $A$ que no es ninguno de los subconjuntos de $B$, lo que implicar\'ia que al menos un elemento $x$, que cumple $x\in A$, no pertenece a $B$, pero si $x\in A$ y $x\not\in B$, se tiene que $A\not\subseteq B$, lo que contradice nuestra suposici\'on inicial. $\blacksquare$
+            Supongamos que  $A\subseteq B$ pero $\partesde[A] \not\subseteq \partesde[B]$, entonces debería existir un subconjunto de $A$ que no es ninguno de los subconjuntos de $B$, lo que implicaría que al menos un elemento $x$, que cumple $x\in A$ no pertenece a $B$, pero entonces, si $x\in A$ y $x\not\in B$, no puede ser que $A\not\subseteq B$, que contradice nuestra suposición inicial. $\blacksquare$
         \end{itemize}
 %Ejercicio 11 -------------------------------------
         \item Sean $p$ y $q$ proposiciones verdaderas o Falsas. Comparar las tablas de verdad de
         \begin{center}
             $p\Rightarrow q$, \hspace*{12pt} $\sim q \Rightarrow \sim p $, \hspace*{12pt} $\sim p \vee q$, \hspace*{12pt} $\sim(p\wedge q)$\\\vspace{12pt}
+            
             \begin{table}[!h]
                 \captionsetup{width=.6\textwidth}
                 \centering
@@ -434,106 +434,8 @@
         \end{center}
 %Ejercicio 12--------------------------------------
         \item Decidir si son verdaderas o falsas.
-        \begin{enumerate}[label = \roman*)]
-        \item 
-            \begin{enumerate}[label = \alph*)]
-                \item $\forall n \in \naturales$ , $n \geq 5$\\
-                \colorbox{g}{\textit{Falso}}, ya que existe al menos un elemento de $\naturales$ que es menor que 5, de hecho existen 4, los elementos de $\corchetes[1,2,3,4]$.\\
-                \item $\exists n \in \naturales$, $n\geq 5$\\
-                \colorbox{g}{\textit{Verdadero}}, cualquiera dentro del conjunto de elementos $\naturales -\corchetes[1,2,3,4]$.
-                \item $\forall n \in \naturales$, $n\geq 5 \vee n\leq 8$\\
-                \colorbox{g}{\textit{Verdadero}}, cualquier elemento que no sea mayor que 5, necesariamente es menor que 8, y para los elementos que no son menores que 8, necesariamente son mayores que 5; adem\'as, existen elementos que cumplen simultaneamente las dos condiciones.\\
-                \item $\exists n \in \naturales$, $n\geq 5 \wedge n\leq 8$\\
-                \colorbox{g}{\textit{Verdadero}}, ya que no existe solo uno, sino en concreto, los elementos del conjunto $\corchetes[5,6,7,8]$.\\
-                \item $\forall n \in \naturales$, $ \exists m \in \naturales$, $m > n$\\
-                \colorbox{g}{\textit{Falso}}. Esta afirmaci\'on sugiere que los n\'umeros naturales est\'an acotados superiormente, lo cual es falso; esto se puede demostrar por el axioma del supremo.\footnote{Se deja una pequeña demostraci\'on al final de las notas.}\\
-                \item $\exists n \in \naturales$, $ \forall m \in \naturales$, $m > n$\\
-                \colorbox{g}{\textit{Falso}}, ya que si $m=1$, no existe ning\'un n\'umero $n$ que cumpla la condici\'on dada.\\
-            \end{enumerate}
-            \newpage
-            \item Negar las proposiciones anteriores, y en cada caso verificar que las proposiciones negadas tiene el valor de verdad opuesto al de la original.\\
-            \begin{enumerate}[label = \alph*)]
-                \item $\neg(\forall n \in \naturales$ , $n \geq 5) = \exists n \in \naturales$, $n<5$\\ 
-                \begin{center}
-                    \noindent\fbox{
-                        \parbox[c]{0.7\textwidth}{
-                            \textit{\underline{Negaci\'on:}}\\
-                            \textit{Existe al menos un elemento $n$ que pertenece a $\naturales$, tal que $n$ es estrictamente menor que 5.}
-                        }
-                    }
-                \end{center}
-                \vspace{12pt}
-                \colorbox{g}{\textit{Verdadero}}, ya que como se dijo, existen varios elementos en $\naturales$ que cumplen ser menores estrictamente que 5.\\
-                \item $\neg(\exists n \in \naturales$, $n\geq 5) = \forall n\in \naturales$, $n<5$\\
-                \begin{center}
-                    \noindent\fbox{
-                        \parbox[c]{0.7\textwidth}{
-                            \textit{\underline{Negaci\'on:}}\\
-                            \textit{Todo elemento de $\naturales$ es estrictamente menor que 5.}
-                        }
-                    }
-                \end{center}
-                \vspace{12pt}
-                \colorbox{g}{\textit{Falso}}, ya que existe no uno, sino infinitos elementos de $\naturales$ que son mayores que 5.\\
-                \item $\neg(\forall n \in \naturales$, $n\geq 5 \vee n\leq 8)=\exists n \in \naturales$, $n<5 \wedge n>8$\\ 
-                \begin{center}
-                    \noindent\fbox{
-                        \parbox[c]{0.7\textwidth}{
-                            \textit{\underline{Negaci\'on:}}\\
-                            \textit{Existe al menos un elemento de $\naturales$ que es menor que 5 y mayor que 8.}
-                        }
-                    }
-                \end{center}
-                \vspace{12pt}
-                \colorbox{g}{\textit{Falso}}, pues no se puede dar simultaneamente que alg\'un n\'umero sea menor que 5 y mayor que 8.\\
-                \item $\neg(\exists n \in \naturales$, $n\geq 5 \wedge n\leq 8)=\forall n \in \naturales$, $n<5 \vee n>8$\\ 
-                \begin{center}
-                    \noindent\fbox{
-                        \parbox[c]{0.7\textwidth}{
-                            \textit{\underline{Negaci\'on:}}\\
-                            \textit{Todo n\'umero natural es, o bien estrictamente menor que 5, o bien estrictamente mayor que 8.}
-                        }
-                    }
-                \end{center}
-                \vspace{12pt}
-                \colorbox{g}{\textit{Falso}}, Si bien la gran mayoria de los n\'umeros naturales cumplen alguna de las dos condiciones, existen elementos dos elementos que no lo cumplen, como son 6 y 7\\
-                \item $\neg(\forall n \in \naturales$, $ \exists m \in \naturales$, $m > n)=\exists n \in \naturales$, $\forall m\in \naturales$, $m \leq n$\\ 
-                \begin{center}
-                    \noindent\fbox{
-                        \parbox[c]{0.7\textwidth}{
-                            \textit{\underline{Negaci\'on:}}\\
-                            \textit{Existe un n\'umero n que pertenece a los naturales, tal que para todos los dem\'as n\'umeros m, m es mayor o igual a n.}
-                        }
-                    }
-                \end{center}
-                \vspace{12pt}
-                \colorbox{g}{\textit{Falso}}, Basicamente se est\'a afirmando que el conjunto de los n\'umeros naturales no solo esta acotado superiormente, sino que adem\'as tiene un elemento m\'aximo(ver la demostraci\'on de lo contrario al final de las notas).\\
-                \item $\neg(\exists n \in \naturales$, $ \forall m \in \naturales$, $m > n)=\forall n \in \naturales$, $\exists m\in \naturales$, $m \leq n$\\ 
-                \begin{center}
-                    \noindent\fbox{
-                        \parbox[c]{0.7\textwidth}{
-                            \textit{\underline{Negaci\'on:}}\\
-                            \textit{Para todo n\'umero natural n, existe un n\'umero m, tamb\'ien natural, tal que m es menor o igual a n.}
-                        }
-                    }
-                \end{center}
-                \vspace{12pt}
-                \colorbox{g}{\textit{Verdadero}}, ya que si tomamos $m=1$, todo n\'umero $n$ natural es mayor o igual a 1.\\
-            \end{enumerate}
-            \newpage
-            \item En cada uno de los casos siguentes, decidir si las dos proposiciones tienen el mismo valor de verdad. Dar un contraejemplo cuando no es el caso.\\
-            \begin{enumerate}[label = \alph*)]
-                \item $\exists x$, $\forall y$, $p(x,y)$ y $\forall y$, $\exists x$, $p(x,y)$\footnote{El ejemplo usado para este punto es literalmente el mismo que se toma en \textit{Proofs and Fundamentals A First Course in Abstract Mathematics Second Edition}}\\\\
-                Sea $p(x,y)=x+y^2=3$ y supongamos que en el conjunto de pertenencia tiene sentido $p(x,y)$, y que tanto $x$ como $y$ pertenecen a dicho conjunto (Por ejemplo suponiendo que el conjunto es $\real$). La primera proposici\'on dice: ``\textit{Existe un n\'umero $x$, tal que para todo n\'umero $y$, $x+y^2=3$}'', lo cual es falso, es decir, no existe un valor de $x$ tal que la igualdad se cumpla para todos y cada uno de los diferentes valores de $y$ con los que se haga una prueba.\\\\
-                Tomando ahora la segunda proposici\'on tenemos: ``\textit{Para todo n\'umero $y$, existe un n\'umero $x$, tal que $x+y^2=3$}'', y esto si se puede dar, ya que para cada valor de $y$ siempre se puede encontrar un valor de $x$, despejando dicho valor en la ecuaci\'on.\\
-                \item $\forall x$, $p(x)$ y $\nexists x$, $\neg p(x)$\\\\
-                Cuando se dice que todo elemento de un conjunto determinado cumple una condici\'on o tiene una propiedad determinada, es lo mismo que decir que no existe ning\'un elemento que no la cumpla, que es justamente lo que se expresa en la segunda proposiciº'on, por lo que estas dos proposiciones deben tener el mismo valor de verdad.
-            \end{enumerate}
+        \begin{enumerate}
+            
         \end{enumerate}
-%Ejercicio 13 -------------------------------------
-        \item Determinar cu\'ales de las siguentes afirmaciones son verdaderas cualesquiera sean los subconjuntos $A$, $B$ y $C$ de un conjunto referencial $V$ y cu\'ales no. Para las que sean verdaderas, dar una demostraci\'on, para las otras dar un contraejemplo.
-%Ejercicio 13 -------------------------------------
-        \item $A$, $B$ y $C$ subconjuntos de un conjunto referencial $V$. Probar que
-        
     \end{enumerate}
 \end{document}

@@ -523,17 +523,12 @@
             \newpage
             \item En cada uno de los casos siguentes, decidir si las dos proposiciones tienen el mismo valor de verdad. Dar un contraejemplo cuando no es el caso.\\
             \begin{enumerate}[label = \alph*)]
-                \item $\exists x$, $\forall y$, $p(x,y)$ y $\forall y$, $\exists x$, $p(x,y)$\footnote{El ejemplo usado para este punto es literalmente el mismo que se toma en \textit{Proofs and Fundamentals A First Course in Abstract Mathematics Second Edition}}\\\\
-                Sea $p(x,y)=x+y^2=3$ y supongamos que en el conjunto de pertenencia tiene sentido $p(x,y)$, y que tanto $x$ como $y$ pertenecen a dicho conjunto (Por ejemplo suponiendo que el conjunto es $\real$). La primera proposici\'on dice: ``\textit{Existe un n\'umero $x$, tal que para todo n\'umero $y$, $x+y^2=3$}'', lo cual es falso, es decir, no existe un valor de $x$ tal que la igualdad se cumpla para todos y cada uno de los diferentes valores de $y$ con los que se haga una prueba.\\\\
-                Tomando ahora la segunda proposici\'on tenemos: ``\textit{Para todo n\'umero $y$, existe un n\'umero $x$, tal que $x+y^2=3$}'', y esto si se puede dar, ya que para cada valor de $y$ siempre se puede encontrar un valor de $x$, despejando dicho valor en la ecuaci\'on.\\
-                \item $\forall x$, $p(x)$ y $\nexists x$, $\neg p(x)$\\\\
-                Cuando se dice que todo elemento de un conjunto determinado cumple una condici\'on o tiene una propiedad determinada, es lo mismo que decir que no existe ning\'un elemento que no la cumpla, que es justamente lo que se expresa en la segunda proposiciº'on, por lo que estas dos proposiciones deben tener el mismo valor de verdad.
+                \item $\exists x$, $\forall y$, $p(x,y)$ y $\forall y$, $\exists x$, $p(x,y)$\\\\
+                Sea $p(x,y)=x+y^2=3$ y supongamos que en el conjunto de pertenencia tiene sentido $p(x,y)$, y que tanto $x$ como $y$ pertenecen a dicho conjunto (Por ejemplo suponiendo que el conjunto es $\real$). La primera proposici\'on dice: ``Existe un n\'umero $x$, tal que para todo n\'umero $y$, x+y^2=3''
             \end{enumerate}
+
         \end{enumerate}
-%Ejercicio 13 -------------------------------------
-        \item Determinar cu\'ales de las siguentes afirmaciones son verdaderas cualesquiera sean los subconjuntos $A$, $B$ y $C$ de un conjunto referencial $V$ y cu\'ales no. Para las que sean verdaderas, dar una demostraci\'on, para las otras dar un contraejemplo.
-%Ejercicio 13 -------------------------------------
-        \item $A$, $B$ y $C$ subconjuntos de un conjunto referencial $V$. Probar que
+
         
     \end{enumerate}
 \end{document}
